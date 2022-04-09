@@ -1,0 +1,13 @@
+name: Dworld
+version: 0.0.4
+main: com.dxr.dworld.Dworld
+commands:
+  dworld:
+    description: dworld插件主指令
+  cd:
+    description: 打开菜单
+  dversion:
+    description: 检查版本
+  dreload:
+    description: 重载配置文件
+

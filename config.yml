@@ -1,0 +1,9 @@
+#这里是dworld的配置文件
+#此版本的配置文件适配 dworld0.0.4 build03
+Fish: true #是否禁止钓鱼,true为禁止
+Fly: true #是否禁止飞行,true为禁止
+Bed: true #是否阻止玩家睡觉,true为阻止
+Chest: true #是否开启菜单,true为开启
+ChestMessage: 这里是默认菜单标题 #菜单的标题
+ChestTip: true #是否开启菜单检测,包括/home功能
+Config Version: 5 #配置文件的版本
