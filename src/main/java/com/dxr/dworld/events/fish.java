@@ -14,12 +14,14 @@ public class fish implements Listener {
         fish.getPlayer().sendMessage(ChatColor.YELLOW + "[Dworld]" + ChatColor.GREEN + "检测到你扔出了鱼竿!");
         Plugin config = com.dxr.dworld.Dworld.getProvidingPlugin(com.dxr.dworld.Dworld.class);
         String name = config.getConfig().getString("Fish");
-        if(Objects.equals(name, String.valueOf(true))) {
-            fish.setCancelled(true);
-            fish.getPlayer().sendMessage(ChatColor.YELLOW+"[Dworld]"+ChatColor.RED+"服务器禁止钓鱼！");
-        }
-        else {
-            fish.getPlayer().sendMessage(ChatColor.YELLOW+"[Dworld]"+ChatColor.GREEN+"此服务器允许钓鱼。");
+        String c = config.getConfig().getString("EventTip");
+        if (Objects.equals(c, String.valueOf(true))) {
+            if (Objects.equals(name, String.valueOf(true))) {
+                fish.setCancelled(true);
+                fish.getPlayer().sendMessage(ChatColor.YELLOW + "[Dworld]" + ChatColor.RED + "服务器禁止钓鱼！");
+            } else {
+                fish.getPlayer().sendMessage(ChatColor.YELLOW + "[Dworld]" + ChatColor.GREEN + "此服务器允许钓鱼。");
+            }
         }
     }
 }

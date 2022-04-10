@@ -10,8 +10,15 @@ public class reload implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Plugin config = com.dxr.dworld.Dworld.getProvidingPlugin(com.dxr.dworld.Dworld.class);
-        config.reloadConfig();
-        sender.sendMessage(ChatColor.YELLOW + "[Dworld]" + ChatColor.GREEN + "配置文件重载完毕!");
-        return false;
+        if(sender.isOp()) {
+            config.reloadConfig();
+            sender.sendMessage(ChatColor.YELLOW + "[Dworld]" + ChatColor.GREEN + "配置文件重载完毕!");
+            return false;
         }
+        else {
+            sender.sendMessage(ChatColor.YELLOW + "[Dworld]" + ChatColor.RED + "你没有权限这样做!");
+        }
+        return false;
     }
+}
+

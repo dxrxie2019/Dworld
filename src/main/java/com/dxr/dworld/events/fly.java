@@ -13,12 +13,14 @@ public class fly implements Listener {
         fly.getPlayer().sendMessage(ChatColor.YELLOW + "[Dworld]" + ChatColor.GREEN + "检测到飞行！");
         Plugin config = com.dxr.dworld.Dworld.getProvidingPlugin(com.dxr.dworld.Dworld.class);
         String name = config.getConfig().getString("Fly");
-        if (Objects.equals(name, String.valueOf(true))) {
-            fly.setCancelled(true);
-            fly.getPlayer().sendMessage(ChatColor.YELLOW + "[Dworld]" + ChatColor.RED + "服务器禁止飞行,已阻止飞行！");
-        }
-        else {
-            fly.getPlayer().sendMessage(ChatColor.YELLOW+"[Dworld]"+ChatColor.GREEN+"此服务器允许飞行。");
+        String c = config.getConfig().getString("EventTip");
+        if (Objects.equals(c, String.valueOf(true))) {
+            if (Objects.equals(name, String.valueOf(true))) {
+                fly.setCancelled(true);
+                fly.getPlayer().sendMessage(ChatColor.YELLOW + "[Dworld]" + ChatColor.RED + "服务器禁止飞行,已阻止飞行！");
+            } else {
+                fly.getPlayer().sendMessage(ChatColor.YELLOW + "[Dworld]" + ChatColor.GREEN + "此服务器允许飞行。");
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ public final class Dworld extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        // 插件开始加载
         System.out.println("[Dworld]插件成功加载！");
         getServer().getPluginManager().registerEvents(new fish(),this);
         getServer().getPluginManager().registerEvents(new fly(),this);
@@ -27,7 +27,7 @@ public final class Dworld extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        // 卸载插件
         System.out.println("[Dworld]插件已卸载！");
     }
 }

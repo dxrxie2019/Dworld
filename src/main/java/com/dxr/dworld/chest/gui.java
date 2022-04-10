@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
+
 import java.util.Objects;
 
 public class gui implements CommandExecutor {
@@ -31,7 +32,7 @@ public class gui implements CommandExecutor {
             return false;
         }
         else {
-            sender.sendMessage(ChatColor.YELLOW+"[Doworld]"+ChatColor.RED+"此服务器未开启便菜单功能！");
+            sender.sendMessage(ChatColor.YELLOW+"[Doworld]"+ChatColor.RED+"此服务器未开启菜单功能！");
         }
         return false;
     }
